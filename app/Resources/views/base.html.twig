@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <!-- Plantilla titulo con twig-->
+        <title>{% block titulo %}{% endblock %}</title>
+
+        <!-- Bootstrap core CSS, los ficheros con el core de la plantilla(normalmente carpeta vendor) se introducen en la carpeta web del project symfony -->
+        <!-- para acceder con twig a esos ficheros de estilos, se usa la funcion asset de symfony para acceder a la direccion de la carpeta web-->
+        <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+       
+        <!--Custom styles for this template-->
+        <!--Se hace lo mismo para acceder a estilos personalizados que se encuentran en la carpeta web del proyecto-->
+        <link href="{{ asset('css/modern-business.css')}}" rel="stylesheet" />
+        {% block stylesheets %}{% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        
+         <!-- Navigation, Menu de navegacion-->
+         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+              <a class="navbar-brand" href="{{ path('homepage') }}">Alpaka Shop</a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ path('nosotros') }}">Nosotros</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Contactos
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                          <a class="dropdown-item" href="{{ path('contactar',{'sitio':'uio'}) }}">Quito</a>
+                          <a class="dropdown-item" href="{{ path('contactar',{'sitio':'loj'}) }}">Loja</a>
+                          <a class="dropdown-item" href="{{ path('contactar',{'sitio':'gye'}) }}">Guayaquil</a>
+                        </div>
+                    </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Categorias
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                      <a class="dropdown-item" href="#">Categoria 1</a>
+                      <a class="dropdown-item" href="#">Categoria 1</a>
+                      <a class="dropdown-item" href="#">Categoria 1</a>
+                      <a class="dropdown-item" href="#">Categoria 1</a>
+                      <a class="dropdown-item" href="#">Single Portfolio Item</a>
+                    </div>
+                  </li>
+                  <!--
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Blog
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                      <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                      <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                      <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Other Pages
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                      <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                      <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+                      <a class="dropdown-item" href="faq.html">FAQ</a>
+                      <a class="dropdown-item" href="404.html">404</a>
+                      <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                    </div>
+                  </li>
+                  -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+      <!-- Fin menu de navegacion-->
+        {# Este block es el de defecto}
+        {% block body %}{% endblock % #}
+        {# Llama a la plantilla personalizada con tag contenido #}
+        {% block contenido %} {% endblock %}
+
+         <!-- Footer -->
+    <footer class="py-5 bg-dark">
+            <div class="container">
+              <p class="m-0 text-center text-white">Copyright &copy; YANCOP 2018</p>
+            </div>
+            <!-- /.container -->
+          </footer>
+
+        {# Lo mismo para los ficheros js. #}
+        <script src="{{ asset('vendor/jquery/jquery.min.js') }}" ></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

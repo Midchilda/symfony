@@ -1,0 +1,71 @@
+{#Plantilla de nuestra app#}
+{# subfichero que extiende de la  estructura base del front #}
+{% extends 'base.html.twig' %}
+
+{# lo siguiente es el titulo #}
+{% block titulo %}
+    Team
+{% endblock titulo %}
+
+{# lo siguiente es el contenido con tag CONTENIDO que se llamara desde el fichero base del front #}
+{% block contenido %}
+      <!-- Page Content -->
+      <div class="container">
+
+            <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">
+             About Alpaka
+            </h1>
+      
+            
+                 <!-- Image Header -->
+      <img class="img-fluid rounded mb-4" src="{{ asset('img/nosotros.png') }}" alt="">
+      <h2> TEAM</h2>
+
+      <!-- Marketing Icons Section -->
+      <div class="row">
+            <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center">
+                            <img class="card-img-top" src="{{ asset('img/silencer.png') }}" alt="">
+                            <div class="card-body">
+                              <h4 class="card-title">Team Member</h4>
+                              <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                            </div>
+                            <div class="card-footer">
+                              <a href="#">name@example.com</a>
+                            </div>
+                          </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center">
+                            <img class="card-img-top" src="{{ asset('img/silencer.png') }}" alt="">
+                            <div class="card-body">
+                              <h4 class="card-title">Team Member</h4>
+                              <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                            </div>
+                            <div class="card-footer">
+                              <a href="#">name@example.com</a>
+                            </div>
+                          </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center">
+                            <img class="card-img-top" src="{{ asset('img/silencer.png') }}" alt="">
+                            <div class="card-body">
+                              <h4 class="card-title">Team Member</h4>
+                              <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                            </div>
+                            <div class="card-footer">
+                              <a href="#">name@example.com</a>
+                            </div>
+                          </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      
+{% endblock contenido %}
